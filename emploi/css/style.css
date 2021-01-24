@@ -1,0 +1,27 @@
+/*
+selecteur {
+  attribut: valeur;  
+  attribut: valeur;  
+  attribut: valeur;  
+}
+*/
+th {
+  background-color: darkgrey;
+  color: white;
+  font-size: 14px;
+}
+
+td {
+  font-size: 12px;
+  text-align: center;
+}
+
+.emploi td.en {
+  background-color: red;
+}
+#edt td.ar {
+  background-color: green;
+}
+.emploi td.fr {
+  background-color: blue;
+}
