@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form name="inscription" action="" onsubmit="return valider()">
+      <table>
+        <tr>
+          <td><label for="email">E-mail : </label></td>
+          <td>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Votre e-mail"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$"
+            />
+            <!-- a voir
+            ^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+.[a-z]{2,6}$
+            ^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$
+            [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$
+            ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$
+            -->
+          </td>
+        </tr>
+        <tr>
+          <td><label for="nom">Nom : </label></td>
+          <td>
+            <input
+              type="text"
+              name="nom"
+              id="nom"
+              placeholder="Votre nom"
+              required
+              pattern="[a-zA-Z']{2,25}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="prenomId">Prénom : </label></td>
+          <td>
+            <input
+              type="text"
+              name="prenom"
+              id="prenomId"
+              placeholder="Votre prénom"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="naissance">Date naissance : </label></td>
+          <td><input type="date" name="naissance" id="naissance" /></td>
+        </tr>
+        <tr>
+          <td><label for="pays">Pays : </label></td>
+          <td>
+            <select name="pays" id="pays" onchange="selectVilles()">
+              <option value="">Veuillez séléctionner un pays</option>
+              <option value="ma">Maroc</option>
+              <option value="fr" selected>France</option>
+              <option value="tu">Tunisie</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="ville">Ville : </label></td>
+          <td>
+            <select name="ville" id="ville">
+              <option value="">Veuillez séléctionner une ville</option>
+              <option data-pays="ma" value="fes">Fès</option>
+              <option data-pays="ma" value="rabat">Rabat</option>
+              <option data-pays="ma" value="casa">Casablanca</option>
+              <option data-pays="fr" value="paris">Paris</option>
+              <option data-pays="fr" value="toulouse">Toulouse</option>
+              <option data-pays="tu" value="sousse">sousse</option>
+              <option data-pays="tu" value="sfax">sfax</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="groupe">Groupe : </label></td>
+          <td>
+            <input type="radio" name="groupe" value="part" id="particulier" />
+            <label for="particulier">Particulier</label>
+            <label><input type="radio" name="groupe" value="pro" /> PRO</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="genre">Genre : </label></td>
+          <td>
+            <input type="radio" name="genre" value="h" id="homme" />
+            <label for="homme">Homme</label>
+            <label><input type="radio" name="genre" value="f" /> Femme</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="langes">Langues : </label></td>
+          <td>
+            <label
+              ><input type="checkbox" name="langues" value="ar" />Arable</label
+            >
+            <label
+              ><input type="checkbox" name="langues" value="en" />Anglais</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="langues"
+                value="fr"
+              />Français</label
+            >
+            <label
+              ><input type="checkbox" name="langues" value="es" />
+              Espagnol</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="reset" value="Annuler" />
+            <input type="submit" value="Valider" />
+            <!-- <input type="button" value="Valider" onclick="return valider()" /> -->
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="js/form.js"></script>
+  </body>
+</html>
